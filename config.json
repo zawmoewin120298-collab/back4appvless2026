@@ -1,0 +1,74 @@
+{
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "8.8.8.8",
+      "https://cloudflare-dns.com/dns-query",
+      "https://dns.google/dns-query",
+      "https://dns-nyc.aaflalo.me/dns-query",
+      "https://dns.adguard.com/dns-query",
+      "https://dns-family.adguard.com/dns-query",
+      "https://uk.adhole.org/dns-query",
+      "https://de.adhole.org/dns-query",
+      "https://us-central.adhole.org/dns-query",
+      "https://us-east.adhole.org/dns-query",
+      "https://doh.nl.ahadns.net/dns-query",
+      "https://doh.in.ahadns.net/dns-query",
+      "https://doh.ny.ahadns.net/dns-query",
+      "https://doh.pl.ahadns.net/dns-query",
+      "https://dns.alidns.com/dns-query",
+      "https://dns.aa.net.uk/dns-query",
+      "https://dnses.alekberg.net/dns-query",
+      "https://doh.42l.fr/dns-query",
+      "https://dns.doh.my.id/dns-query",
+      "https://example.doh.blockerdns.com/dns-query",
+      "https://dns.blokada.org/dns-query",
+      "https://private.canadianshield.cira.ca/dns-query",
+      "https+local://1.1.1.1/dns-query",
+      "localhost"
+    ]
+  },
+  "inbounds": [
+    {
+      "port": 8080,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "f2e17b4d-22fd-44a4-90db-40649717be8e"
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/speedtest.net"
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "tag": "direct",
+      "settings": {
+        "domainStrategy": "UseIP"
+      }
+    },
+    {
+      "protocol": "dns",
+      "tag": "dns-out"
+    }
+  ],
+  "routing": {
+    "domainStrategy": "AsIs",
+    "rules": [
+      {
+        "type": "field",
+        "port": 53,
+        "outboundTag": "dns-out"
+      }
+    ]
+  }
+}
