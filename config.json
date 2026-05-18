@@ -35,7 +35,7 @@
       "settings": {
         "clients": [
           {
-            "id": "f2e17b4d-22fd-44a4-90db-40649717be8e"
+            "id": "24cfe861-1c03-40a2-a971-175574d50ede"
           }
         ],
         "decryption": "none"
@@ -43,7 +43,7 @@
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-          "path": "/speedtest.net"
+          "path": "/app.dtac.co.th"
         }
       }
     }
