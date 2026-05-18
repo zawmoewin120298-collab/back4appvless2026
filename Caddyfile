@@ -17,8 +17,8 @@
 
     # ၃။ အခြား ပုံမှန် အဝင်လမ်းကြောင်းများကို Speedtest ဆီ Reverse Proxy လုပ်ရန်
     handle {
-        reverse_proxy https://www.speedtest.net {
-            header_up Host www.speedtest.net
+        reverse_proxy https://app.dtac.co.th {
+            header_up Host app.dtac.co.th
             header_up X-Real-IP {remote_host}
         }
     }
