@@ -1,0 +1,25 @@
+:80 {
+    log {
+        output file /var/log/caddy/access.log
+    }
+
+    # ၁။ Back4app ရဲ့ Health Check တွေ လှမ်းခေါ်ရင် အမြဲတမ်း 200 OK (အလုပ်လုပ်နေကြောင်း) တိုက်ရိုက်ပြန်ပေးရန်
+    @health {
+        method OPTIONS GET
+        path /
+    }
+    respond @health "OK" 200
+
+    # ၂။ သင့်ရဲ့ VPN (V2Ray) ဆီသို့ သွားမည့် လမ်းကြောင်း
+    handle /speedtest.net {
+        reverse_proxy localhost:8080
+    }
+
+    # ၃။ အခြား ပုံမှန် အဝင်လမ်းကြောင်းများကို Speedtest ဆီ Reverse Proxy လုပ်ရန်
+    handle {
+        reverse_proxy https://www.speedtest.net {
+            header_up Host www.speedtest.net
+            header_up X-Real-IP {remote_host}
+        }
+    }
+}
