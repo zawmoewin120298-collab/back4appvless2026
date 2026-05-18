@@ -11,14 +11,14 @@
     respond @health "OK" 200
 
     # ၂။ သင့်ရဲ့ VPN (V2Ray) ဆီသို့ သွားမည့် လမ်းကြောင်း
-    handle /speedtest.net {
+    handle /www.true.th {
         reverse_proxy localhost:8080
     }
 
     # ၃။ အခြား ပုံမှန် အဝင်လမ်းကြောင်းများကို Speedtest ဆီ Reverse Proxy လုပ်ရန်
     handle {
-        reverse_proxy https://app.dtac.co.th {
-            header_up Host app.dtac.co.th
+        reverse_proxy https://www.true.th {
+            header_up Host www.true.th
             header_up X-Real-IP {remote_host}
         }
     }
