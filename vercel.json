@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/speedtest.net",
+      "destination": "https://openspeedtestnet.fastlyspeedtestnet.ggff.net/speedtest.net"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "https://www.speedtest.net/$1"
+    }
+  ]
+}
+
