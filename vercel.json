@@ -3,7 +3,7 @@
   "rewrites": [
     {
       "source": "/speedtest.net",
-      "destination": "https://openspeedtestnet.fastlyspeedtestnet.ggff.net/speedtest.net"
+      "destination": "https://back4appvless-production-e02d.up.railway.app/speedtest.net"
     },
     {
       "source": "/(.*)",
