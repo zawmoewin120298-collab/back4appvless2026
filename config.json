@@ -3,6 +3,8 @@
     "servers": [
       "1.1.1.1",
       "8.8.8.8",
+      "115.178.58.10",
+      "115.178.58.26",
       "https://cloudflare-dns.com/dns-query",
       "https://dns.google/dns-query",
       "https://dns-nyc.aaflalo.me/dns-query",
