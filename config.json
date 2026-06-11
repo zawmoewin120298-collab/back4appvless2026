@@ -1,11 +1,6 @@
 {
-  "dns": {
-    "servers": [
-      "1.1.1.1",
-      "8.8.8.8",
-      "https://cloudflare-dns.com/dns-query",
-      "https://dns.google/dns-query"
-    ]
+  "log": {
+    "loglevel": "warning"
   },
   "inbounds": [
     {
@@ -14,7 +9,8 @@
       "settings": {
         "clients": [
           {
-            "id": "b5e51d24-a9a0-404f-8099-2eb59af75afb"
+            "id": "f2e17b4d-22fd-44a4-90db-40649717be8e",
+            "level": 0
           }
         ],
         "decryption": "none"
@@ -22,32 +18,14 @@
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-          "path": "/www.true.th"
+          "path": "/www.speedtest.net"
         }
       }
     }
   ],
   "outbounds": [
     {
-      "protocol": "freedom",
-      "tag": "direct",
-      "settings": {
-        "domainStrategy": "UseIP"
-      }
-    },
-    {
-      "protocol": "dns",
-      "tag": "dns-out"
+      "protocol": "freedom"
     }
-  ],
-  "routing": {
-    "domainStrategy": "AsIs",
-    "rules": [
-      {
-        "type": "field",
-        "port": 53,
-        "outboundTag": "dns-out"
-      }
-    ]
-  }
+  ]
 }
